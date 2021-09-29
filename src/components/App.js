@@ -7,7 +7,7 @@ function App() {
   const [url, setUrl] = React.useState("");
 
   React.useEffect(() => {
-    RequestHTML("https://google.com");
+    RequestHTML("https://obsproject.com/");
   }, []);
   return (
     <div className="flex">
