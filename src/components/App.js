@@ -1,15 +1,24 @@
-import React from 'react'
+import React from "react";
+import RequestHTML from "../server";
 
-import '../assets/css/App.css'
+import "../style/style.css";
 
 function App() {
-  return (
-    <div>
-      <h1>Hello, Electron!</h1>
+  const [url, setUrl] = React.useState("");
 
-      <p>I hope you enjoy using basic-electron-react-boilerplate to start your dev off right!</p>
+  React.useEffect(() => {
+    RequestHTML("https://google.com");
+  }, []);
+  return (
+    <div className="flex">
+      <h1>Add the URL</h1>
+      <input
+        type="text"
+        value={url}
+        onChange={(e) => setUrl(e.currentTarget.value)}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
